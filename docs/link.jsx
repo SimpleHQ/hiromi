@@ -1,14 +1,14 @@
 import React from 'react';
 import Demo, {props as P} from 'react-demo';
-import Button from '../components/Button';
+import Link from '../components/Link';
 
 export default React.createClass({
   render() {
     return (
       <div>
-        <h1 className="title">Button</h1>
+        <h1 className="title">Link</h1>
         <Demo
-          target={Button}
+          target={Link}
           props={{
             isLink: P.bool(false),
             isOutlined: P.bool(false),
@@ -22,6 +22,7 @@ export default React.createClass({
             isMedium: P.bool(false),
             isLarge: P.bool(false),
             isLoading: P.bool(false),
+            isDisabled: P.bool(false),
             children: P.string('Click me')
           }}/>
       </div>

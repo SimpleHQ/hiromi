@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
-const Button = ({
+const Link = ({
   className, isLink, isOutlined, isPrimary, isInfo, isSuccess, isWarning,
-  isDanger, isInverted, size, isLoading, isSmall, isMedium, isLarge,
-  children, ...props
+  isDanger, isInverted, size, isLoading, isDisabled, isSmall, isMedium,
+  isLarge, children, ...props
 }) => {
   let classList = classnames(
     'button',
@@ -20,18 +20,19 @@ const Button = ({
       'is-small': isSmall,
       'is-medium': isMedium,
       'is-large': isLarge,
-      'is-loading': isLoading
+      'is-loading': isLoading,
+      'is-disabled': isDisabled
     }
   );
 
   return (
-    <button className={classList} {...props}>
+    <a className={classList} {...props}>
       {children}
-    </button>
+    </a>
   );
 };
 
-Button.propTypes = {
+Link.propTypes = {
   isLink: PropTypes.bool,
   isOutlined: PropTypes.bool,
   isPrimary: PropTypes.bool,
@@ -44,10 +45,11 @@ Button.propTypes = {
   isMedium: PropTypes.bool,
   isLarge: PropTypes.bool,
   isLoading: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   children: PropTypes.node
 };
 
-Button.defaultProps = {
+Link.defaultProps = {
   isLink: false,
   isOutlined: false,
   isPrimary: false,
@@ -56,10 +58,12 @@ Button.defaultProps = {
   isWarning: false,
   isDanger: false,
   isInverted: false,
-  isLoading: false,
   isSmall: false,
   isMedium: false,
-  isLarge: false
+  isLarge: false,
+  isLoading: false,
+  isDisabled: false,
+  size: 'normal'
 };
 
-export default Button;
+export default Link;

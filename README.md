@@ -11,3 +11,10 @@ To run the docs:
 To build the production files:
 
 `npm run build`
+
+### components
+
+- [x] Button
+- [x] Link (Button <a />)
+- [x] Content
+- [x] Icon
