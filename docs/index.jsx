@@ -10,6 +10,8 @@ import Link from './link';
 import Content from './content';
 import Icon from './icon';
 import Input from './input';
+import Label from './label';
+import Control from './control';
 
 const Description = React.createClass({
   propTypes: {
@@ -41,6 +43,8 @@ const App = React.createClass({
                 <li><ReactRouterLink to="icon">Icon</ReactRouterLink></li>
                 <li><ReactRouterLink to="content">Content</ReactRouterLink></li>
                 <li><ReactRouterLink to="input">Input</ReactRouterLink></li>
+                <li><ReactRouterLink to="label">Label</ReactRouterLink></li>
+                <li><ReactRouterLink to="control">Control</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -61,6 +65,8 @@ ReactDOM.render(
       <Route path="icon" component={Icon}/>
       <Route path="content" component={Content}/>
       <Route path="input" component={Input} />
+      <Route path="label" component={Label} />
+      <Route path="control" component={Control} />
     </Route>
   </Router>,
   document.getElementById('app')

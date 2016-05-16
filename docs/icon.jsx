@@ -13,6 +13,7 @@ export default React.createClass({
             isSmall: P.bool(false),
             isMedium: P.bool(false),
             isLarge: P.bool(false),
+            hasSpan: P.bool(true),
             tag: P.string('home')
           }}/>
       </div>
