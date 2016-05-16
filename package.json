@@ -5,7 +5,7 @@
   "main": "./lib",
   "scripts": {
     "babel": "babel ./components --out-dir ./lib",
-    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
+    "build": "cross-env NODE_ENV=production npm run babel",
     "docs": "webpack-dev-server --hot --inline --content-base docs/",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
