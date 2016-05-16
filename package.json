@@ -1,19 +1,23 @@
 {
-  "name": "bulma-react",
+  "name": "hiromi",
   "version": "0.0.1",
   "description": "React components for Bulma. http://bulma.io/",
-  "main": "index.js",
+  "main": "./lib",
   "scripts": {
     "babel": "babel ./components --out-dir ./lib",
     "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
     "docs": "webpack-dev-server --hot --inline --content-base docs/",
+    "prepublish": "build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimpleHQ/bulma-react.git"
+    "url": "git+https://github.com/SimpleHQ/hiromi.git"
   },
-  "author": "SimpleHQ",
+  "author": {
+    "name": "SimpleHQ",
+    "url": "http://github.com/SimpleHQ"
+  },
   "contributors": [
     {
       "name": "Cameron Stitt",
@@ -22,9 +26,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SimpleHQ/bulma-react/issues"
+    "url": "https://github.com/SimpleHQ/hiromi/issues"
   },
-  "homepage": "https://github.com/SimpleHQ/bulma-react#readme",
+  "homepage": "https://github.com/SimpleHQ/hiromi#readme",
   "dependencies": {
     "bulma": "0.0.26",
     "react": "^15.0.2",
