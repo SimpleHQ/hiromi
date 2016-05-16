@@ -2,13 +2,14 @@ require('bulma/css/bulma.css');
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {
-  Router, Route, Link as ReactRouterLink, browserHistory
+  Router, Route, Link as ReactRouterLink, hashHistory
 } from 'react-router'
 
 import Button from './button';
 import Link from './link';
 import Content from './content';
 import Icon from './icon';
+import Input from './input';
 
 const Description = React.createClass({
   propTypes: {
@@ -39,6 +40,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="link">Link</ReactRouterLink></li>
                 <li><ReactRouterLink to="icon">Icon</ReactRouterLink></li>
                 <li><ReactRouterLink to="content">Content</ReactRouterLink></li>
+                <li><ReactRouterLink to="input">Input</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -52,12 +54,13 @@ const App = React.createClass({
 });
 
 ReactDOM.render(
-  <Router>
-    <Route path="/" component={App}>
+  <Router history={hashHistory}>
+    <Route path="/" component={App} >
       <Route path="button" component={Button}/>
       <Route path="link" component={Link}/>
       <Route path="icon" component={Icon}/>
       <Route path="content" component={Content}/>
+      <Route path="input" component={Input} />
     </Route>
   </Router>,
   document.getElementById('app')

@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
-const Icon = ({tag, isSmall, isMedium, isLarge, ...props}) => {
-  const classList = classnames('icon', props.className);
+const Icon = ({tag, isSmall, isMedium, isLarge, className, ...props}) => {
+  const classList = classnames('icon', className);
   return (
     <span className={classList} {...props}>
       <i className={`fa fa-${tag}`}></i>

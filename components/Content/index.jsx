@@ -1,10 +1,9 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 
-const Content = ({isMedium, isLarge, children, ...props}) => {
+const Content = ({isMedium, isLarge, children, className, ...props}) => {
   const classList = classnames(
-    'content',
-    {
+    'content', className, {
       'is-medium': isMedium,
       'is-large': isLarge
     }

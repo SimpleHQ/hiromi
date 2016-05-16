@@ -7,8 +7,7 @@ const Button = ({
   children, ...props
 }) => {
   let classList = classnames(
-    'button',
-    {
+    'button', className, {
       'is-outlined': isOutlined,
       'is-link': isLink,
       'is-primary': isPrimary,
