@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/SimpleHQ/hiromi#readme",
   "dependencies": {
-    "bulma": "0.0.26",
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
   },
   "devDependencies": {
+    "bulma": "0.0.26",
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
     "babel-loader": "^6.2.4",
