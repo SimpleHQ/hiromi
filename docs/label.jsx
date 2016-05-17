@@ -8,6 +8,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Label</h1>
         <Demo
+          background="none"
           target={Label}
           props={{
             isDisabled: P.bool(false),

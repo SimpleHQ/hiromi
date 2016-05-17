@@ -15,6 +15,11 @@ To build the production files:
 ### components
 
 - [x] Button
-- [x] Link (Button <a />)
+- [x] Checkbox
 - [x] Content
+- [x] Control
 - [x] Icon
+- [x] Input
+- [x] Label
+- [x] Link (Anchor element, similar to Button in style)
+- [x] Radio

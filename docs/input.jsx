@@ -8,6 +8,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Input</h1>
         <Demo
+          background="none"
           target={Input}
           props={{
             isPrimary: P.bool(false),

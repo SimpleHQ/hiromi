@@ -8,6 +8,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Link</h1>
         <Demo
+          background="none"
           target={Link}
           props={{
             isLink: P.bool(false),

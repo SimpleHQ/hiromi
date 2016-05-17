@@ -5,6 +5,8 @@ import Icon from './Icon';
 import Input from './Input';
 import Label from './Label';
 import Link from './Link';
+import Checkbox from './Checkbox';
+import Radio from './Radio';
 
 export default {
   Button,
@@ -14,5 +16,7 @@ export default {
   Icon,
   Input,
   Label,
-  Link
+  Link,
+  Checkbox,
+  Radio
 };

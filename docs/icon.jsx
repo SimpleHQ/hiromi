@@ -8,6 +8,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Icon</h1>
         <Demo
+          background="none"
           target={Icon}
           props={{
             isSmall: P.bool(false),

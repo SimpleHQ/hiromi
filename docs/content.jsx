@@ -8,6 +8,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Content</h1>
         <Demo
+          background="none"
           target={Content}
           props={{
             isMedium: P.bool(false),

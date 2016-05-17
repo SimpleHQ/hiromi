@@ -10,6 +10,7 @@ export default React.createClass({
       <div>
         <h1 className="title">Control</h1>
         <Demo
+          background="none"
           props={{
             iconTag: P.string('home'),
             iconRight: P.bool(false),
@@ -28,6 +29,7 @@ export default React.createClass({
         </Demo>
         <h1 className="title">Control with Addons</h1>
         <Demo
+          background="none"
           props={{
             iconTag: P.string('home'),
             iconRight: P.bool(false),
@@ -46,6 +48,7 @@ export default React.createClass({
         </Demo>
         <h1 className="title">Grouped Control</h1>
         <Demo
+          background="none"
           props={{
             iconTag: P.string('home'),
             iconRight: P.bool(false),
@@ -64,6 +67,7 @@ export default React.createClass({
         </Demo>
         <h1 className="title">Horizontal Controls</h1>
         <Demo
+          background="none"
           props={{
             label: P.string('Horizontal Label')
           }}

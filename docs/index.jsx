@@ -12,6 +12,8 @@ import Icon from './icon';
 import Input from './input';
 import Label from './label';
 import Control from './control';
+import Checkbox from './checkbox';
+import Radio from './radio';
 
 const Description = React.createClass({
   propTypes: {
@@ -45,6 +47,8 @@ const App = React.createClass({
                 <li><ReactRouterLink to="input">Input</ReactRouterLink></li>
                 <li><ReactRouterLink to="label">Label</ReactRouterLink></li>
                 <li><ReactRouterLink to="control">Control</ReactRouterLink></li>
+                <li><ReactRouterLink to="checkbox">Checkbox</ReactRouterLink></li>
+                <li><ReactRouterLink to="radio">Radio</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -67,6 +71,8 @@ ReactDOM.render(
       <Route path="input" component={Input} />
       <Route path="label" component={Label} />
       <Route path="control" component={Control} />
+      <Route path="checkbox" component={Checkbox} />
+      <Route path="radio" component={Radio} />
     </Route>
   </Router>,
   document.getElementById('app')
