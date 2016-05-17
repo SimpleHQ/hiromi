@@ -12,6 +12,10 @@ To build the production files:
 
 `npm run build`
 
+### helpers
+
+Every component has a bunch of helper properties attached to them. Note that some of these properties may not effect the style. We made this a default for all components as it allows for less duplication as well as the ability to cover all helpers for all components. Also, Bulma does not give a detailed list of which element has what modifiers. For the full list of modifier classes, go [here](http://bulma.io/documentation/modifiers/syntax/).
+
 ### components
 
 - [x] Button
@@ -46,4 +50,4 @@ To build the production files:
 - [ ] Footer
 - [ ] Grid
 - [ ] Tiles
-- [ ] Shared helpers
+- [ ] Shared helpers - In progress
