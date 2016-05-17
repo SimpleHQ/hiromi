@@ -24,3 +24,26 @@ To build the production files:
 - [x] Link (Anchor element, similar to Button in style)
 - [x] Radio
 - [x] Textarea
+- [x] Select
+- [x] Box
+- [x] Notification
+- [x] Progress
+- [ ] Tag
+- [ ] Titles
+- [ ] Image
+- [ ] Card
+- [ ] Level
+- [ ] Media
+- [ ] Menu
+- [ ] Message
+- [ ] Nav
+- [ ] Pagination
+- [ ] Panel
+- [ ] Tabs
+- [ ] Container
+- [ ] Hero
+- [ ] Section
+- [ ] Footer
+- [ ] Grid
+- [ ] Tiles
+- [ ] Shared helpers
