@@ -21,6 +21,7 @@ import Box from './box';
 import Progress from './progress';
 import Notification from './notification';
 import Tag from './tag';
+import Title from './title';
 
 const Description = React.createClass({
   propTypes: {
@@ -62,6 +63,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="progress">Progress</ReactRouterLink></li>
                 <li><ReactRouterLink to="notification">Notification</ReactRouterLink></li>
                 <li><ReactRouterLink to="tag">Tag</ReactRouterLink></li>
+                <li><ReactRouterLink to="title">Title</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -92,6 +94,7 @@ ReactDOM.render(
       <Route path="progress" component={Progress} />
       <Route path="notification" component={Notification} />
       <Route path="tag" component={Tag} />
+      <Route path="title" component={Title} />
     </Route>
   </Router>,
   document.getElementById('app')

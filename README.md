@@ -29,7 +29,7 @@ To build the production files:
 - [x] Notification
 - [x] Progress
 - [x] Tag
-- [ ] Titles
+- [x] Titles
 - [ ] Image
 - [ ] Card
 - [ ] Level

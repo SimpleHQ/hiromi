@@ -12,6 +12,7 @@ import Select, {Option} from './Select';
 import Notification from './Notification';
 import Progress from './Progress';
 import Tag from './Tag';
+import {Title, Subtitle} from './Title';
 
 export default {
   Button,
@@ -29,5 +30,7 @@ export default {
   Option,
   Notification,
   Progress,
-  Tag
+  Tag,
+  Title,
+  Subtitle
 };
