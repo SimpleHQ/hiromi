@@ -1,15 +1,20 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
-const Icon = ({tag, isSmall, isMedium, isLarge, hasSpan, className, ...props}) => {
-  const classList = classnames('icon', className);
+const Icon = ({tag, hasSpan, className, ...props}) => {
   const iconElement = <i className={`fa fa-${tag}`}></i>;
   if (!hasSpan) {
     return iconElement;
   }
 
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('icon', className, classList);
+
   return (
-    <span className={classList} {...props}>
+    <span className={classList} {...finalProps}>
       {iconElement}
     </span>
   );
@@ -17,17 +22,13 @@ const Icon = ({tag, isSmall, isMedium, isLarge, hasSpan, className, ...props}) =
 
 Icon.propTypes = {
   tag: PropTypes.string.isRequired,
-  isSmall: PropTypes.bool,
-  isMedium: PropTypes.bool,
-  isLarge: PropTypes.bool,
-  hasSpan: PropTypes.bool
+  hasSpan: PropTypes.bool,
+  ...defaultReactProps
 };
 
 Icon.defaultProps = {
-  isSmall: false,
-  isMedium: false,
-  isLarge: false,
-  hasSpan: true
+  hasSpan: true,
+  ...defaultReactPropsValues
 };
 
 export default Icon;

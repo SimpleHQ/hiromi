@@ -1,28 +1,30 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
-
 import Icon from '../Icon';
 import Label from '../Label';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
 const Control = ({
-  iconTag, iconRight, isLoading, hasAddons, prefix, suffix,
+  iconTag, iconRight, hasAddons, prefix, suffix,
   isGrouped, isHorizontal, className, children, ...props
 }) => {
   const hasIcon = !!iconTag;
-  const classList = classnames(
-    'control', className, {
+  const icon = hasIcon ? <Icon tag={iconTag} hasSpan={false} /> : null;
+
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames(
+    'control', className, classList, {
       'has-icon': hasIcon,
       'has-icon-right': iconRight,
-      'is-loading': isLoading,
       'has-addons': hasAddons,
-      'is-grouped': isGrouped
+      'is-grouped': isGrouped,
     }
   );
 
-  const icon = hasIcon ? <Icon tag={iconTag} hasSpan={false} /> : null;
-
   return (
-    <p className={classList} {...props}>
+    <p className={classList} {...finalProps}>
       {prefix}
       {children}
       {icon}
@@ -34,19 +36,19 @@ const Control = ({
 Control.propTypes = {
   iconTag: PropTypes.string,
   iconRight: PropTypes.bool,
-  isLoading: PropTypes.bool,
   hasAddons: PropTypes.bool,
   isGrouped: PropTypes.bool,
   prefix: PropTypes.node,
   suffix: PropTypes.node,
-  children: PropTypes.node
+  children: PropTypes.node,
+  ...defaultReactProps
 };
 
 Control.defaultProps = {
   iconRight: false,
-  isLoading: false,
   hasAddons: false,
-  isGrouped: false
+  isGrouped: false,
+  ...defaultReactPropsValues
 };
 
 const HorizontalControl = ({label, className, children, ...props}) => {

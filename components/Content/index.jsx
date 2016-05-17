@@ -1,29 +1,28 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
-const Content = ({isMedium, isLarge, children, className, ...props}) => {
-  const classList = classnames(
-    'content', className, {
-      'is-medium': isMedium,
-      'is-large': isLarge
-    }
+const Content = ({children, className, ...props}) => {
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames(
+    'content', className, classList
   );
   return (
-    <div className={classList} {...props}>
+    <div className={classList} {...finalProps}>
       {children}
     </div>
   )
 };
 
 Content.propTypes = {
-  isMedium: PropTypes.bool,
-  isLarge: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  ...defaultReactProps
 };
 
 Content.defaultProps = {
-  isMedium: false,
-  isLarge: false
+  ...defaultReactPropsValues
 };
 
 export default Content;
