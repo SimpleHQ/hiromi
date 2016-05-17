@@ -14,6 +14,7 @@ import Label from './label';
 import Control from './control';
 import Checkbox from './checkbox';
 import Radio from './radio';
+import Textarea from './textarea';
 
 const Description = React.createClass({
   propTypes: {
@@ -49,6 +50,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="control">Control</ReactRouterLink></li>
                 <li><ReactRouterLink to="checkbox">Checkbox</ReactRouterLink></li>
                 <li><ReactRouterLink to="radio">Radio</ReactRouterLink></li>
+                <li><ReactRouterLink to="textarea">Textarea</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -73,6 +75,7 @@ ReactDOM.render(
       <Route path="control" component={Control} />
       <Route path="checkbox" component={Checkbox} />
       <Route path="radio" component={Radio} />
+      <Route path="textarea" component={Textarea} />
     </Route>
   </Router>,
   document.getElementById('app')

@@ -7,6 +7,7 @@ import Label from './Label';
 import Link from './Link';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
+import Textarea from './Textarea';
 
 export default {
   Button,
@@ -18,5 +19,6 @@ export default {
   Label,
   Link,
   Checkbox,
-  Radio
+  Radio,
+  Textarea
 };

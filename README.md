@@ -23,3 +23,4 @@ To build the production files:
 - [x] Label
 - [x] Link (Anchor element, similar to Button in style)
 - [x] Radio
+- [x] Textarea
