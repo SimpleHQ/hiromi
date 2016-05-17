@@ -28,7 +28,7 @@ To build the production files:
 - [x] Box
 - [x] Notification
 - [x] Progress
-- [ ] Tag
+- [x] Tag
 - [ ] Titles
 - [ ] Image
 - [ ] Card
