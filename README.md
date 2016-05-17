@@ -36,7 +36,7 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [x] Progress
 - [x] Tag
 - [x] Titles
-- [ ] Image
+- [x] Image
 - [ ] Card
 - [ ] Level
 - [ ] Media

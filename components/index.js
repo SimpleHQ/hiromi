@@ -13,6 +13,7 @@ import Notification from './Notification';
 import Progress from './Progress';
 import Tag from './Tag';
 import {Title, Subtitle} from './Title';
+import Image from './Image';
 
 export default {
   Button,
@@ -32,5 +33,6 @@ export default {
   Progress,
   Tag,
   Title,
-  Subtitle
+  Subtitle,
+  Image
 };
