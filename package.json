@@ -1,12 +1,12 @@
 {
   "name": "hiromi",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "React components for Bulma. http://bulma.io/",
   "main": "./lib",
   "scripts": {
     "babel": "babel ./components --out-dir ./lib",
     "build": "cross-env NODE_ENV=production npm run babel",
-    "docs": "webpack-dev-server --hot --inline --content-base docs/",
+    "docs": "webpack-dev-server --hot --inline --history-api-fallback --content-base docs/",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

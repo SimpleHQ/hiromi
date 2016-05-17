@@ -1,4 +1,5 @@
 require('bulma/css/bulma.css');
+require('./docs.css');
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -16,6 +17,9 @@ import Checkbox from './checkbox';
 import Radio from './radio';
 import Textarea from './textarea';
 import Select from './select';
+import Box from './box';
+import Progress from './progress';
+import Notification from './notification';
 
 const Description = React.createClass({
   propTypes: {
@@ -53,6 +57,9 @@ const App = React.createClass({
                 <li><ReactRouterLink to="radio">Radio</ReactRouterLink></li>
                 <li><ReactRouterLink to="textarea">Textarea</ReactRouterLink></li>
                 <li><ReactRouterLink to="select">Select</ReactRouterLink></li>
+                <li><ReactRouterLink to="box">Box</ReactRouterLink></li>
+                <li><ReactRouterLink to="progress">Progress</ReactRouterLink></li>
+                <li><ReactRouterLink to="notification">Notification</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -79,6 +86,9 @@ ReactDOM.render(
       <Route path="radio" component={Radio} />
       <Route path="textarea" component={Textarea} />
       <Route path="select" component={Select} />
+      <Route path="box" component={Box} />
+      <Route path="progress" component={Progress} />
+      <Route path="notification" component={Notification} />
     </Route>
   </Router>,
   document.getElementById('app')
