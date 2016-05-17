@@ -9,6 +9,9 @@ import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Textarea from './Textarea';
 import Select, {Option} from './Select';
+import Notification from './Notification';
+import Progress from './Progress';
+import Tag from './Tag';
 
 export default {
   Button,
@@ -23,5 +26,8 @@ export default {
   Radio,
   Textarea,
   Select,
-  Option
+  Option,
+  Notification,
+  Progress,
+  Tag
 };
