@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
 const getTitleSizeClass = (size) => {
   return classnames({
@@ -12,13 +15,14 @@ const getTitleSizeClass = (size) => {
   });
 };
 
-const Title = (className, children, size, {...props}) => {
-  const classList = classnames('title', className, getTitleSizeClass(size));
+const Title = ({className, children, size, ...props}) => {
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('title', className, getTitleSizeClass(size), classList);
   return React.cloneElement(
     children,
     {
       className: classList,
-      ...props
+      ...finalProps
     }
   );
 };
@@ -27,16 +31,22 @@ Title.propTypes = {
   size: PropTypes.oneOf([
     1, 2, 3, 4, 5, 6
   ]),
-  children: PropTypes.element
+  children: PropTypes.element,
+  ...defaultReactProps
 };
 
-const Subtitle = (className, children, size, {...props}) => {
-  const classList = classnames('subtitle', className, getTitleSizeClass(size));
+Title.defaultProps = {
+  ...defaultReactPropsValues
+};
+
+const Subtitle = ({className, children, size, ...props}) => {
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('subtitle', className, getTitleSizeClass(size), classList);
   return React.cloneElement(
     children,
     {
       className: classList,
-      ...props
+      ...finalProps
     }
   );
 };
@@ -45,7 +55,12 @@ Subtitle.propTypes = {
   size: PropTypes.oneOf([
     1, 2, 3, 4, 5, 6
   ]),
-  children: PropTypes.element
+  children: PropTypes.element,
+  ...defaultReactProps
+};
+
+Subtitle.defaultProps = {
+  ...defaultReactPropsValues
 };
 
 export {

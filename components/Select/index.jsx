@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
 const valueAtPath = (item, path) => {
   let value = item;
@@ -30,9 +33,10 @@ Option.defaultProps = {
 const Select = ({
   children, options, className, valuePath, labelPath, onChange, ...props
 }) => {
-  const classList = classnames('select', className);
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('select', className, classList);
   return (
-    <span className={classList}>
+    <span className={classList} {...finalProps}>
       <select onChange={onChange}>
         {children}
         {options.map((option, idx) => {
@@ -49,11 +53,13 @@ Select.propTypes = {
   options: PropTypes.array.isRequired,
   valuePath: PropTypes.array,
   labelPath: PropTypes.array.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  ...defaultReactProps
 };
 
 Select.defaultProps = {
-  labelPath: ['name']
+  labelPath: ['name'],
+  ...defaultReactPropsValues
 };
 
 export {

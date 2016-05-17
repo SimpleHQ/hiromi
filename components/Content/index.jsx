@@ -6,9 +6,7 @@ import {
 
 const Content = ({children, className, ...props}) => {
   let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames(
-    'content', className, classList
-  );
+  classList = classnames('content', className, classList);
   return (
     <div className={classList} {...finalProps}>
       {children}

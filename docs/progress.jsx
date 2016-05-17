@@ -19,7 +19,7 @@ export default React.createClass({
             isSmall: P.bool(false),
             isMedium: P.bool(false),
             isLarge: P.bool(false),
-            value: P.number(0),
+            value: P.number(25),
             max: P.number(100)
           }}/>
       </div>

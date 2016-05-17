@@ -14,14 +14,12 @@ const Control = ({
   const icon = hasIcon ? <Icon tag={iconTag} hasSpan={false} /> : null;
 
   let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames(
-    'control', className, classList, {
-      'has-icon': hasIcon,
-      'has-icon-right': iconRight,
-      'has-addons': hasAddons,
-      'is-grouped': isGrouped,
-    }
-  );
+  classList = classnames('control', className, classList, {
+    'has-icon': hasIcon,
+    'has-icon-right': iconRight,
+    'has-addons': hasAddons,
+    'is-grouped': isGrouped,
+  });
 
   return (
     <p className={classList} {...finalProps}>
@@ -52,10 +50,11 @@ Control.defaultProps = {
 };
 
 const HorizontalControl = ({label, className, children, ...props}) => {
-  const classList = classnames('control', className, 'is-horizontal');
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('control', className, 'is-horizontal', classList);
 
   return (
-    <div className={classList} {...props}>
+    <div className={classList} {...finalProps}>
       <div className='control-label'>
         <Label>{label}</Label>
       </div>
@@ -66,7 +65,12 @@ const HorizontalControl = ({label, className, children, ...props}) => {
 
 HorizontalControl.propTypes = {
   label: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.element.isRequired,
+  ...defaultReactProps
+};
+
+HorizontalControl.defaultProps = {
+  ...defaultReactPropsValues
 };
 
 export {

@@ -1,20 +1,15 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import Button from '../Button';
+import {
+  modifierClassList, defaultReactProps, defaultReactPropsValues
+} from '../utils';
 
-const Notification = ({
-  isPrimary, isInfo, isSuccess, isWarning, isDanger, onClose,
-  children, className, ...props
-}) => {
-  const classList = classnames('notification', className, {
-    'is-primary': isPrimary,
-    'is-info': isInfo,
-    'is-success': isSuccess,
-    'is-warning': isWarning,
-    'is-danger': isDanger
-  });
+const Notification = ({onClose, children, className, ...props}) => {
+  let {classList, ...finalProps} = modifierClassList(props);
+  classList = classnames('notification', className, classList);
   return (
-    <div className={classList} {...props}>
+    <div className={classList} {...finalProps}>
       <Button className="delete" onClick={onClose}></Button>
       {children}
     </div>
@@ -22,22 +17,13 @@ const Notification = ({
 };
 
 Notification.propTypes = {
-  isPrimary: PropTypes.bool,
-  isInfo: PropTypes.bool,
-  isSuccess: PropTypes.bool,
-  isWarning: PropTypes.bool,
-  isDanger: PropTypes.bool,
-
   onClose: PropTypes.func,
-  children: PropTypes.node
+  children: PropTypes.node,
+  ...defaultReactProps
 };
 
 Notification.defaultProps = {
-  isPrimary: false,
-  isInfo: false,
-  isSuccess: false,
-  isWarning: false,
-  isDanger: false
+  ...defaultReactPropsValues
 };
 
 export default Notification;

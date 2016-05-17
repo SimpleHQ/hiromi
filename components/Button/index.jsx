@@ -9,12 +9,10 @@ const Button = ({
   children, ...props
 }) => {
   let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames(
-    'button', className, classList, {
-      'is-link': isLink,
-      'is-inverted': isInverted,
-    }
-  );
+  classList = classnames('button', className, classList, {
+    'is-link': isLink,
+    'is-inverted': isInverted,
+  });
 
   return (
     <button className={classList} {...finalProps}>

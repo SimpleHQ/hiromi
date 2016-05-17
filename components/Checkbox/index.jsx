@@ -1,16 +1,13 @@
 import React, {PropTypes} from 'react';
 import classnames from 'classnames';
 import Label from '../Label';
-import {
-  modifierClassList, defaultReactProps, defaultReactPropsValues
-} from '../utils';
+import {defaultReactProps, defaultReactPropsValues} from '../utils';
 
 const Checkbox = ({input, children, ...props}) => {
-  let {classList, ...finalProps} = modifierClassList(props);
   const inputElement = input ? input : <input type="checkbox" />;
 
   return (
-    <Label isCheckbox className={classList} {...finalProps}>
+    <Label isCheckbox {...props}>
       {inputElement}
       {children}
     </Label>

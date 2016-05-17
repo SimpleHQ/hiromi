@@ -4,6 +4,8 @@ Named so because of the original voice actress of Bulma in Dragonball, [Hiromi T
 
 React components for Bulma.
 
+It's still in the early stages of development and is subject to breaking changes.
+
 To run the docs:
 
 `npm run docs`
