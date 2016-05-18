@@ -4,9 +4,10 @@ import {
   modifierClassList, defaultReactProps, defaultReactPropsValues
 } from '../utils';
 
-const Link = ({className, isLink, isInverted, children, ...props}) => {
+const Link = ({isButton, className, isLink, isInverted, children, ...props}) => {
   let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames('button', className, classList, {
+  classList = classnames(className, classList, {
+    'button': isButton,
     'is-link': isLink,
     'is-inverted': isInverted
   });
@@ -19,6 +20,7 @@ const Link = ({className, isLink, isInverted, children, ...props}) => {
 };
 
 Link.propTypes = {
+  isButton: PropTypes.bool,
   isLink: PropTypes.bool,
   isInverted: PropTypes.bool,
   children: PropTypes.node,
@@ -26,6 +28,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
+  isButton: true,
   isLink: false,
   isInverted: false,
   ...defaultReactPropsValues

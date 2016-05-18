@@ -14,6 +14,7 @@ import Progress from './Progress';
 import Tag from './Tag';
 import {Title, Subtitle} from './Title';
 import Image from './Image';
+import Card, {CardFooter} from './Card';
 
 export default {
   Button,
@@ -34,5 +35,7 @@ export default {
   Tag,
   Title,
   Subtitle,
-  Image
+  Image,
+  Card,
+  CardFooter
 };
