@@ -1,6 +1,6 @@
 {
   "name": "hiromi",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "React components for Bulma. http://bulma.io/",
   "main": "./lib",
   "scripts": {

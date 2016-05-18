@@ -43,7 +43,7 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [ ] Menu
 - [x] Message
 - [ ] Nav
-- [ ] Pagination
+- [x] Pagination
 - [ ] Panel
 - [ ] Tabs
 - [ ] Container
