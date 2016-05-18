@@ -37,7 +37,7 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [x] Tag
 - [x] Titles
 - [x] Image
-- [ ] Card
+- [x] Card
 - [ ] Level
 - [ ] Media
 - [ ] Menu
