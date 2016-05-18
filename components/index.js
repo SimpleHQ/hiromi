@@ -15,6 +15,7 @@ import Tag from './Tag';
 import {Title, Subtitle} from './Title';
 import Image from './Image';
 import Card, {CardFooter} from './Card';
+import Message from './Message';
 
 export default {
   Button,
@@ -37,5 +38,6 @@ export default {
   Subtitle,
   Image,
   Card,
-  CardFooter
+  CardFooter,
+  Message
 };

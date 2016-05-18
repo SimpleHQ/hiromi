@@ -1,28 +1,23 @@
 import React from 'react';
 import Demo, {props as P} from 'react-demo';
-import Tag from '../components/Tag';
+import Message from '../components/Message';
 
 export default React.createClass({
   render() {
     return (
       <div>
-        <h1 className="title">Tag</h1>
+        <h1 className="title">Message</h1>
         <Demo
           background="none"
-          target={Tag}
+          target={Message}
           props={{
-            hasDelete: P.bool(false),
-            isDark: P.bool(false),
             isPrimary: P.bool(false),
             isInfo: P.bool(false),
             isSuccess: P.bool(false),
             isWarning: P.bool(false),
             isDanger: P.bool(false),
-            isSmall: P.bool(false),
-            isMedium: P.bool(false),
-            isLarge: P.bool(false),
-            children: P.string('Tag, your it'),
-            onDelete: P.callback.log(() => "DELETED")
+            title: P.string("Message Title"),
+            children: P.string("Message content.")
           }}/>
       </div>
     );

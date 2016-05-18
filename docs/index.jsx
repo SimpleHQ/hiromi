@@ -24,6 +24,7 @@ import Tag from './tag';
 import Title from './title';
 import Image from './image';
 import Card from './card';
+import Message from './message';
 
 const Description = React.createClass({
   propTypes: {
@@ -68,6 +69,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="title">Title</ReactRouterLink></li>
                 <li><ReactRouterLink to="image">Image</ReactRouterLink></li>
                 <li><ReactRouterLink to="card">Card</ReactRouterLink></li>
+                <li><ReactRouterLink to="message">Message</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -101,6 +103,7 @@ ReactDOM.render(
       <Route path="title" component={Title} />
       <Route path="image" component={Image} />
       <Route path="card" component={Card} />
+      <Route path="message" component={Message} />
     </Route>
   </Router>,
   document.getElementById('app')
