@@ -41,7 +41,7 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [ ] Level
 - [ ] Media
 - [ ] Menu
-- [ ] Message
+- [x] Message
 - [ ] Nav
 - [ ] Pagination
 - [ ] Panel
