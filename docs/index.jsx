@@ -25,6 +25,7 @@ import Title from './title';
 import Image from './image';
 import Card from './card';
 import Message from './message';
+import Pagination from './pagination';
 
 const Description = React.createClass({
   propTypes: {
@@ -70,6 +71,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="image">Image</ReactRouterLink></li>
                 <li><ReactRouterLink to="card">Card</ReactRouterLink></li>
                 <li><ReactRouterLink to="message">Message</ReactRouterLink></li>
+                <li><ReactRouterLink to="pagination">Pagination</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -104,6 +106,7 @@ ReactDOM.render(
       <Route path="image" component={Image} />
       <Route path="card" component={Card} />
       <Route path="message" component={Message} />
+      <Route path="pagination" component={Pagination} />
     </Route>
   </Router>,
   document.getElementById('app')

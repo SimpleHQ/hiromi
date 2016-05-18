@@ -16,6 +16,7 @@ import {Title, Subtitle} from './Title';
 import Image from './Image';
 import Card, {CardFooter} from './Card';
 import Message from './Message';
+import Pagination from './Pagination';
 
 export default {
   Button,
@@ -39,5 +40,6 @@ export default {
   Image,
   Card,
   CardFooter,
-  Message
+  Message,
+  Pagination
 };
