@@ -53,6 +53,8 @@
     "eslint": "^2.10.1",
     "eslint-plugin-react": "^5.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "font-awesome": "^4.6.1",
     "html-webpack-plugin": "^2.17.0",
     "node-sass": "^3.7.0",
     "react-demo": "^1.4.1",

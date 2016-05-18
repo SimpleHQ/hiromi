@@ -5,19 +5,47 @@ import {
 } from '../utils';
 import Link from '../Link';
 
-const PageItems = ({pageCount, currentPage, ...props}) => {
+const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) => {
   let items = [];
+  const visibleEitherSide = pagesVisible / 2;
+  const minLeft = Math.floor(currentPage - visibleEitherSide);
+  const maxRight = Math.floor(currentPage + visibleEitherSide);
 
   for (var i = 1; i <= pageCount; i++) {
+    if (
+      i !== 1 && i !== pageCount &&
+      (i < minLeft || i > maxRight)
+    ) {
+      continue;
+    }
+
+    // If it's the min left visible, and there were skipped items
+    if (i === minLeft && (minLeft - 1) !== 1) {
+      items.push(
+        <li>
+          ...
+        </li>
+      );
+    }
+
     const active = i === currentPage;
     const className = classnames({
       'is-active': active
     });
     items.push(
       <li>
-        <Link className={className}>{i}</Link>
+        <Link className={className} onClick={onPaginate(onChange, i)}>{i}</Link>
       </li>
     );
+
+    // If it's the max right visible, and there will be skipped items
+    if (i === maxRight && (maxRight + 1) !== pageCount) {
+      items.push(
+        <li>
+          ...
+        </li>
+      );
+    }
   }
   return <ul>{items}</ul>;
 };
@@ -26,7 +54,7 @@ const onPaginate = (onChange, pageIndex) => {
   return (event) => {
     let args = [...arguments];
     args.splice(0, 0, pageIndex);
-    onChange(args);
+    onChange(...args);
   };
 };
 
@@ -68,7 +96,8 @@ const RightLevel = ({
 
 const Pagination = ({
   currentPage, pageCount, hasFirst, first, hasPrevious, previous,
-  hasNext, next, hasLast, last, className, onChange, ...props
+  hasNext, next, hasLast, last, className, onChange, pagesVisible,
+  ...props
 }) => {
   let {classList, ...finalProps} = modifierClassList(props);
   classList = classnames('level', className, classList);
@@ -101,7 +130,12 @@ const Pagination = ({
       {leftLevel}
       <div className="level-item has-text-centered">
         <nav className="pagination" {...finalProps}>
-          <PageItems pageCount={pageCount} currentPage={currentPage} />
+          <PageItems
+            pageCount={pageCount}
+            currentPage={currentPage}
+            onChange={onChange}
+            pagesVisible={pagesVisible}
+          />
         </nav>
       </div>
       {rightLevel}
@@ -120,6 +154,7 @@ Pagination.propTypes = {
   next: PropTypes.node,
   hasLast: PropTypes.bool,
   last: PropTypes.node,
+  pagesVisible: PropTypes.number,
 
   onChange: PropTypes.func,
   ...defaultReactProps
@@ -134,6 +169,7 @@ Pagination.defaultProps = {
   next: "Next",
   hasLast: true,
   last: "Last",
+  pagesVisible: 2,
   ...defaultReactPropsValues
 };
 
