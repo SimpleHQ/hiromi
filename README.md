@@ -2,7 +2,7 @@
 
 Named so because of the original voice actress of Bulma in Dragonball, [Hiromi Tsuru](https://en.wikipedia.org/wiki/Hiromi_Tsuru)
 
-React components for Bulma.
+React components for [Bulma](http://bulma.io/).
 
 It's still in the early stages of development and is subject to breaking changes.
 
