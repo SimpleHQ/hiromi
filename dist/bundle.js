@@ -31134,6 +31134,7 @@
 	          background: 'none',
 	          props: {
 	            name: _reactDemo.props.string('group1'),
+	            value: _reactDemo.props.string('my value'),
 	            children: _reactDemo.props.string('Remember me')
 	          }
 	        },
@@ -31144,7 +31145,7 @@
 	            _react2.default.createElement(_Radio2.default, props),
 	            _react2.default.createElement(
 	              _Radio2.default,
-	              { name: props.name },
+	              { name: props.name, value: props.value },
 	              'This is a test'
 	            )
 	          );
@@ -31205,11 +31206,12 @@
 	var Radio = function Radio(_ref) {
 	  var input = _ref.input;
 	  var name = _ref.name;
+	  var value = _ref.value;
 	  var children = _ref.children;
 	
-	  var props = _objectWithoutProperties(_ref, ['input', 'name', 'children']);
+	  var props = _objectWithoutProperties(_ref, ['input', 'name', 'value', 'children']);
 	
-	  var inputElement = input ? input : _react2.default.createElement('input', { type: 'radio', name: name });
+	  var inputElement = input ? input : _react2.default.createElement('input', { type: 'radio', name: name, value: value });
 	
 	  return _react2.default.createElement(
 	    _Label2.default,
@@ -31222,6 +31224,7 @@
 	Radio.propTypes = _extends({
 	  input: _react.PropTypes.node,
 	  name: _react.PropTypes.string,
+	  value: _react.PropTypes.string,
 	  children: _react.PropTypes.node
 	}, _utils.defaultReactProps);
 	
