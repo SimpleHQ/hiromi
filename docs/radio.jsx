@@ -11,7 +11,7 @@ export default React.createClass({
           background="none"
           props={{
             name: P.string('group1'),
-            value: p.string('my value'),
+            value: P.string('my value'),
             children: P.string('Remember me')
           }}
         >
