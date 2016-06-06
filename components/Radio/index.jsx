@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import Label from '../Label';
 import {defaultReactProps, defaultReactPropsValues} from '../utils';
 
-const Radio = ({input, name, children, ...props}) => {
-  const inputElement = input ? input : <input type="radio" name={name} />;
+const Radio = ({input, name, value, children, ...props}) => {
+  const inputElement = input ? input : <input type="radio" name={name} value={value} />;
 
   return (
     <Label isRadio {...props}>
@@ -17,6 +17,7 @@ const Radio = ({input, name, children, ...props}) => {
 Radio.propTypes = {
   input: PropTypes.node,
   name: PropTypes.string,
+  value: PropTypes.string,
   children: PropTypes.node,
   ...defaultReactProps
 };

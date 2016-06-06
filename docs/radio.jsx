@@ -11,6 +11,7 @@ export default React.createClass({
           background="none"
           props={{
             name: P.string('group1'),
+            value: P.string('my value'),
             children: P.string('Remember me')
           }}
         >
@@ -18,7 +19,7 @@ export default React.createClass({
             return (
               <div>
                 <Radio {...props}></Radio>
-                <Radio name={props.name}>This is a test</Radio>
+                <Radio name={props.name} value={props.value}>This is a test</Radio>
               </div>
             );
           }}
