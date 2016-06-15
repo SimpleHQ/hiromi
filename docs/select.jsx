@@ -13,7 +13,8 @@ export default React.createClass({
             options: P.json([{"id": 1, "name": "Option 1"}, {"id": 2, "name": "Second Option"}]),
             valuePath: P.json(["id"]),
             labelPath: P.json(["name"]),
-            onChange: P.callback.log(() => { return "CHANGED"; })
+            onChange: P.callback.log(() => { return "CHANGED"; }),
+            defaultValue: P.string("2")
           }}
         >
           {props => {

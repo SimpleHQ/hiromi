@@ -62,7 +62,7 @@ const Card = ({footer, title, iconTag, onIconClick, className, children, ...prop
 };
 
 Card.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.node,
   iconTag: PropTypes.string,
   onIconClick: PropTypes.func,
   footer: PropTypes.instanceOf(CardFooter),
