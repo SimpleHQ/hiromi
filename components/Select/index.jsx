@@ -13,7 +13,7 @@ const valueAtPath = (item, path) => {
 };
 
 const placeholder = (text) => {
-  if (!text) return '';
+  if (!text) return null;
   return (<Option item={{name: text}} />);
 };
 
