@@ -12,11 +12,6 @@ const valueAtPath = (item, path) => {
   return value;
 };
 
-const placeholder = (text) => {
-  if (!text) return null;
-  return (<Option item={{name: text}} />);
-};
-
 const Option = ({item, valuePath, labelPath, ...props}) => {
   const value = valuePath ? valueAtPath(item, valuePath) : null;
   const label = valueAtPath(item, labelPath);
@@ -36,7 +31,7 @@ Option.defaultProps = {
 };
 
 const Select = ({
-  children, options, className, valuePath, labelPath, onChange, defaultValue, placeholderText, ...props
+  children, options, className, valuePath, labelPath, onChange, defaultValue, ...props
 }) => {
   let {classList, ...finalProps} = modifierClassList(props);
   classList = classnames('select', className, classList);
@@ -44,7 +39,6 @@ const Select = ({
     <span className={classList} {...finalProps}>
       <select onChange={onChange} defaultValue={defaultValue}>
         {children}
-        {placeholder(placeholderText)}
         {options.map((option, idx) => {
           return (
             <Option key={`select-option-${idx}`} item={option} valuePath={valuePath} labelPath={labelPath} />
