@@ -14,7 +14,7 @@ const valueAtPath = (item, path) => {
 
 const placeholder = (text) => {
   if (!text) return null;
-  return (<Option item={{name: text}} />);
+  return (<Option labelPath={['name']} item={{name: text}} />);
 };
 
 const Option = ({item, valuePath, labelPath, ...props}) => {
