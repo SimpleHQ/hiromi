@@ -11,7 +11,7 @@ class Input extends Component {
     let {classList, ...finalProps} = modifierClassList(props);
 
     this.finalProps = finalProps;
-    this.classList = classnames('input', className, classList);
+    this.classList = classnames('input', this.props.className, classList);
   }
 
   render() {
