@@ -22,12 +22,12 @@ const Control = ({
   });
 
   return (
-    <p className={classList} {...finalProps}>
+    <div className={classList} {...finalProps}>
       {prefix}
       {children}
       {icon}
       {suffix}
-    </p>
+    </div>
   );
 };
 

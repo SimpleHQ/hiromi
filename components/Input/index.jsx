@@ -1,17 +1,25 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames';
 import {
   modifierClassList, defaultReactProps, defaultReactPropsValues
 } from '../utils';
 
-const Input = ({className, ...props}) => {
-  let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames('input', className, classList);
+class Input extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <input className={classList} {...finalProps} />
-  );
-};
+    let {classList, ...finalProps} = modifierClassList(props);
+
+    this.finalProps = finalProps;
+    this.classList = classnames('input', className, classList);
+  }
+
+  render() {
+    return (
+      <input className={this.classList} {...this.finalProps} />
+    );
+  }
+}
 
 Input.propTypes = {
   ...defaultReactProps
