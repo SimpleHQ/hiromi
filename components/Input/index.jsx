@@ -5,18 +5,11 @@ import {
 } from '../utils';
 
 class Input extends Component {
-  constructor(props) {
-    super(props);
-
-    let {classList, ...finalProps} = modifierClassList(props);
-
-    this.finalProps = finalProps;
-    this.classList = classnames('input', this.props.className, classList);
-  }
-
   render() {
+    let {classList, ...finalProps} = modifierClassList(this.props);
+    classList = classnames('input', this.props.className, classList);
     return (
-      <input className={this.classList} {...this.finalProps} />
+      <input className={classList} {...finalProps} />
     );
   }
 }
