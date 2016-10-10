@@ -26,6 +26,7 @@ import Image from './image';
 import Card from './card';
 import Message from './message';
 import Pagination from './pagination';
+import ModalCard from './modalcard';
 
 const Description = React.createClass({
   propTypes: {
@@ -48,7 +49,7 @@ const App = React.createClass({
         <div className="columns">
           <div className="column is-2">
             <div className="menu">
-              <p class="menu-label">
+              <p className="menu-label">
                 Components
               </p>
               <ul className="menu-list">
@@ -72,6 +73,7 @@ const App = React.createClass({
                 <li><ReactRouterLink to="card">Card</ReactRouterLink></li>
                 <li><ReactRouterLink to="message">Message</ReactRouterLink></li>
                 <li><ReactRouterLink to="pagination">Pagination</ReactRouterLink></li>
+                <li><ReactRouterLink to="modalcard">ModalCard</ReactRouterLink></li>
               </ul>
             </div>
           </div>
@@ -107,6 +109,7 @@ ReactDOM.render(
       <Route path="card" component={Card} />
       <Route path="message" component={Message} />
       <Route path="pagination" component={Pagination} />
+      <Route path="modalcard" component={ModalCard} />
     </Route>
   </Router>,
   document.getElementById('app')
