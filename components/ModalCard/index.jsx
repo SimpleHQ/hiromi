@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import {
   modifierClassList, defaultReactProps, defaultReactPropsValues
@@ -13,32 +13,31 @@ const ModalCardFooter = ({children}) => {
 };
 
 ModalCardFooter.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element)
+  children: PropTypes.element
 };
 
-const ModalCard = ({title, footer, className, children, ...props}) => {
-  let {classList, ...finalProps} = modifierClassList(props);
-  classList = classnames('modal', className, classList);
+class ModalCard extends Component {
+  render() {
+    let {classList, ...finalProps} = modifierClassList(this.props);
+    classList = classnames('modal', this.props.className, classList);
 
-  const header = (
-    <header className="modal-card-head">
-      <p className="modal-card-title">{title}</p>
-      <button className="delete"></button>
-    </header>
-  );
-
-  return (
-    <div className={classList} style={props.visible ? {'display': 'block'} : {}}>
-      <div className="modal-background"></div>
-      <div className="modal-card">
-        {header}
-        <section className="modal-card-body">
-          {children}
-        </section>
-        {footer}
+    return (
+      <div className={classList} style={this.props.visible ? {'display': 'block'} : {}}>
+        <div className="modal-background"></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">{this.props.title}</p>
+            <button className="delete"></button>
+          </header>
+          <section className="modal-card-body">
+            {this.children}
+          </section>
+          {footer}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
 };
 
 ModalCard.propTypes = {
