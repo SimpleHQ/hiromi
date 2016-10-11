@@ -32,7 +32,7 @@ class ModalCard extends Component {
           <section className="modal-card-body">
             {this.children}
           </section>
-          {footer}
+          {this.props.footer}
         </div>
       </div>
     );
