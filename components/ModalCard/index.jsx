@@ -13,7 +13,7 @@ const ModalCardFooter = ({children}) => {
 };
 
 ModalCardFooter.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.node
 };
 
 class ModalCard extends Component {
