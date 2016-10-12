@@ -30,7 +30,7 @@ class ModalCard extends Component {
             <button className="delete"></button>
           </header>
           <section className="modal-card-body">
-            {this.children}
+            {this.props.children}
           </section>
           {this.props.footer}
         </div>
