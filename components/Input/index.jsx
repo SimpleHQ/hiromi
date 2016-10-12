@@ -6,8 +6,8 @@ import {
 
 class Input extends Component {
   render() {
-    let {classList, ...finalProps} = modifierClassList(this.props);
-    classList = classnames('input', this.props.className, classList);
+    let {classList, className, ...finalProps} = modifierClassList(this.props);
+    classList = classnames('input', className, classList);
     return (
       <input className={classList} {...finalProps} />
     );
