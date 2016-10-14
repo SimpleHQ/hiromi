@@ -22,7 +22,7 @@ class ModalCard extends Component {
     this.state = {
       open: props.visible
     };
-    this.close = this.close.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,11 +31,11 @@ class ModalCard extends Component {
 
   get closeButton() {
     if (this.props.showClose) {
-      return <button className="delete" onClick={this.close}></button>;
+      return <button className="delete" onClick={this.handleClose}></button>;
     }
   }
 
-  close() {
+  handleClose() {
     this.setState({open: false});
   }
 
@@ -45,7 +45,7 @@ class ModalCard extends Component {
 
     return (
       <div className={classList} style={this.state.open ? {'display': 'block'} : {}}>
-        <div className="modal-background" onClick={this.close}></div>
+        <div className="modal-background" onClick={this.handleClose}></div>
         <div className="modal-card">
           <header className="modal-card-head">
             <p className="modal-card-title">{this.props.title}</p>
