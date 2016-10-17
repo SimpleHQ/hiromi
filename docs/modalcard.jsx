@@ -27,7 +27,9 @@ export default React.createClass({
             title: P.string('Modal title goes here'),
             children: P.string('Modal body goes here'),
             visible: P.bool(false),
-            showClose: P.bool(true)
+            showClose: P.bool(true),
+            onOpen: P.callback.log(() => "OPENED"),
+            onClose: P.callback.log(() => "CLOSED")
           }}/>
           <h1>ModalCard with Footer</h1>
           <Demo
@@ -49,7 +51,9 @@ export default React.createClass({
               title: P.string('Modal title goes here'),
               children: P.string('Modal body goes here'),
               visible: P.bool(false),
-              showClose: P.bool(true)
+              showClose: P.bool(true),
+              onOpen: P.callback.log(() => "OPENED"),
+              onClose: P.callback.log(() => "CLOSED")
             }}>
               {props => {
                 return (

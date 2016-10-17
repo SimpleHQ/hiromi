@@ -29,6 +29,17 @@ class ModalCard extends Component {
     this.setState({open: nextProps.visible});
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.open !== prevState.open) {
+      console.log('state did update: from', prevState, ' to ', this.state.open);
+      if (this.state.open) {
+        this.props.onOpen();
+      } else {
+        this.props.onClose();
+      }
+    }
+  }
+
   get closeButton() {
     if (this.props.showClose) {
       return <button className="delete" onClick={this.handleClose}></button>;
@@ -63,9 +74,11 @@ class ModalCard extends Component {
 
 ModalCard.propTypes = {
   title: PropTypes.node,
-  footer: PropTypes.instanceOf(ModalCardFooter),
+  footer: PropTypes.node,
   visible: PropTypes.bool,
   showClose: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
   ...defaultReactProps
 };
 
