@@ -4,19 +4,7 @@ import {
   modifierClassList, defaultReactProps, defaultReactPropsValues
 } from '../utils';
 
-const ModalCardFooter = ({children}) => {
-  return (
-    <footer className="modal-card-foot">
-      {children}
-    </footer>
-  );
-};
-
-ModalCardFooter.propTypes = {
-  children: PropTypes.node
-};
-
-class ModalCard extends Component {
+class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +29,7 @@ class ModalCard extends Component {
 
   get closeButton() {
     if (this.props.showClose) {
-      return <button className="delete" onClick={this.handleClose}></button>;
+      return <button className="modal-close" onClick={this.handleClose}></button>;
     }
   }
 
@@ -56,24 +44,16 @@ class ModalCard extends Component {
     return (
       <div className={classList}>
         <div className="modal-background" onClick={this.handleClose}></div>
-        <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title">{this.props.title}</p>
-            {this.closeButton}
-          </header>
-          <section className="modal-card-body">
-            {this.props.children}
-          </section>
-          {this.props.footer}
+        <div className="modal-content">
+          {this.props.children}
         </div>
+        {this.closeButton}
       </div>
     );
   }
 };
 
-ModalCard.propTypes = {
-  title: PropTypes.node,
-  footer: PropTypes.node,
+Modal.propTypes = {
   visible: PropTypes.bool,
   showClose: PropTypes.bool,
   onOpen: PropTypes.func,
@@ -81,13 +61,10 @@ ModalCard.propTypes = {
   ...defaultReactProps
 };
 
-ModalCard.defaultProps = {
+Modal.defaultProps = {
   visible: false,
   showClose: true,
   ...defaultReactPropsValues
 };
 
-export {
-  ModalCard as default,
-  ModalCardFooter
-};
+export default Modal;

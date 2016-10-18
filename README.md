@@ -53,3 +53,5 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [ ] Grid
 - [ ] Tiles
 - [ ] Shared helpers - In progress
+- [x] Modal
+- [x] Modal Card
