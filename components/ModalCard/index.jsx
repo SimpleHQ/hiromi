@@ -31,7 +31,6 @@ class ModalCard extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.open !== prevState.open) {
-      console.log('state did update: from', prevState, ' to ', this.state.open);
       if (this.state.open) {
         this.props.onOpen();
       } else {
@@ -52,10 +51,10 @@ class ModalCard extends Component {
 
   render() {
     let {classList, ...finalProps} = modifierClassList(this.props);
-    classList = classnames('modal', this.props.className, classList);
+    classList = classnames('modal', this.props.className, classList, {'is-active': this.state.open});
 
     return (
-      <div className={classList} style={this.state.open ? {'display': 'block'} : {}}>
+      <div className={classList}>
         <div className="modal-background" onClick={this.handleClose}></div>
         <div className="modal-card">
           <header className="modal-card-head">

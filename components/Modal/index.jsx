@@ -17,6 +17,16 @@ class Modal extends Component {
     this.setState({open: nextProps.visible});
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.open !== prevState.open) {
+      if (this.state.open) {
+        this.props.onOpen();
+      } else {
+        this.props.onClose();
+      }
+    }
+  }
+
   get closeButton() {
     if (this.props.showClose) {
       return <button className="modal-close" onClick={this.handleClose}></button>;
@@ -46,6 +56,8 @@ class Modal extends Component {
 Modal.propTypes = {
   visible: PropTypes.bool,
   showClose: PropTypes.bool,
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
   ...defaultReactProps
 };
 
