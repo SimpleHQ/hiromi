@@ -36,13 +36,13 @@ Option.defaultProps = {
 };
 
 const Select = ({
-  children, options, className, valuePath, labelPath, onChange, defaultValue, placeholderText, ...props
+  children, options, className, valuePath, labelPath, onChange, defaultValue, value, placeholderText, ...props
 }) => {
   let {classList, ...finalProps} = modifierClassList(props);
   classList = classnames('select', className, classList);
   return (
     <span className={classList} {...finalProps}>
-      <select onChange={onChange} defaultValue={defaultValue}>
+      <select onChange={onChange} defaultValue={defaultValue} value={value}>
         {children}
         {placeholder(placeholderText)}
         {options.map((option, idx) => {
