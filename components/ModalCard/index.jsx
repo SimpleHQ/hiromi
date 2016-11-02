@@ -47,12 +47,9 @@ class ModalCard extends Component {
 
   get renderHeader() {
     if (!this.props.title && !this.props.showClose) return;
-
-    const title = !this.props.title ? null : <p className="modal-card-title">{this.props.title}</p>;
-
     return (
       <header className="modal-card-head">
-        {title}
+        <p className="modal-card-title">{this.props.title}</p>
         {this.closeButton}
       </header>
     );
