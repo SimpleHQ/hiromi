@@ -45,6 +45,16 @@ class ModalCard extends Component {
     }
   }
 
+  get renderHeader() {
+    if (!this.props.title && !this.props.showClose) return;
+    return (
+      <header className="modal-card-head">
+        <p className="modal-card-title">{this.props.title}</p>
+        {this.closeButton}
+      </header>
+    );
+  }
+
   handleClose() {
     this.setState({open: false});
   }
@@ -57,10 +67,7 @@ class ModalCard extends Component {
       <div className={classList}>
         <div className="modal-background" onClick={this.handleClose}></div>
         <div className="modal-card">
-          <header className="modal-card-head">
-            <p className="modal-card-title">{this.props.title}</p>
-            {this.closeButton}
-          </header>
+          {this.renderHeader}
           <section className="modal-card-body">
             {this.props.children}
           </section>
