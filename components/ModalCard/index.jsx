@@ -32,9 +32,9 @@ class ModalCard extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.open !== prevState.open) {
       if (this.state.open) {
-        this.props.onOpen();
+        if (this.props.onOpen) { this.props.onOpen(); }
       } else {
-        this.props.onClose();
+        if (this.props.onClose) { this.props.onClose(); }
       }
     }
   }
