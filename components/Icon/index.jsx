@@ -5,7 +5,7 @@ import {
 } from '../utils';
 
 const Icon = ({tag, hasSpan, className, ...props}) => {
-  const iconElement = <i className={`${this.props.tagPrefix}${tag}`}></i>;
+  const iconElement = <i className={`${tag}`}></i>;
   if (!hasSpan) {
     return iconElement;
   }
@@ -22,13 +22,11 @@ const Icon = ({tag, hasSpan, className, ...props}) => {
 
 Icon.propTypes = {
   tag: PropTypes.string.isRequired,
-  tagPrefix: PropTypes.string,
   hasSpan: PropTypes.bool,
   ...defaultReactProps
 };
 
 Icon.defaultProps = {
-  tagPrefix: 'icon-',
   hasSpan: true,
   ...defaultReactPropsValues
 };
