@@ -5,7 +5,7 @@ import {
 } from '../utils';
 
 const Icon = ({tag, hasSpan, className, ...props}) => {
-  const iconElement = <i className={`fa fa-${tag}`}></i>;
+  const iconElement = <i className={`icon-${tag}`}></i>;
   if (!hasSpan) {
     return iconElement;
   }
