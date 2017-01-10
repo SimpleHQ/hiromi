@@ -17,7 +17,6 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     minLeft = maxRight - pagesVisible + 1;
     if (minLeft < 2) minLeft = 2;
   }
-  console.warn(minLeft, maxRight);
 
   for (var i = 1; i <= pageCount; i++) {
     if (
