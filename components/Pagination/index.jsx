@@ -7,11 +7,18 @@ import Link from '../Link';
 
 const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) => {
   let items = [];
-  const visibleEitherSide = pagesVisible / 2;
-  const minLeft = Math.floor(currentPage - visibleEitherSide);
-  const maxRight = Math.floor(currentPage + visibleEitherSide);
+  // compute minLeft and maxRight indeces of page buttons
+  // which exclude first and last pages.
+  let minLeft = currentPage - Math.floor(pagesVisible/2);
+  if (minLeft < 2) minLeft = 2;
+  let maxRight = minLeft + pagesVisible - 1;
+  if (maxRight >= pageCount) {
+    maxRight = pageCount - 1;
+    minLeft = maxRight - pagesVisible + 1;
+    if (minLeft < 2) minLeft = 2;
+  }
 
-  for (var i = 1; i <= pageCount; i++) {
+  for (let i = 1; i <= pageCount; i++) {
     if (
       i !== 1 && i !== pageCount &&
       (i < minLeft || i > maxRight)
@@ -20,7 +27,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     }
 
     // If it's the min left visible, and there were skipped items
-    if (i === minLeft && (minLeft - 1) !== 1) {
+    if (i === minLeft && minLeft > 2) {
       items.push(
         <li>
           ...
@@ -39,7 +46,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     );
 
     // If it's the max right visible, and there will be skipped items
-    if (i === maxRight && (maxRight + 1) !== pageCount) {
+    if (i === maxRight && maxRight < pageCount - 1) {
       items.push(
         <li>
           ...
