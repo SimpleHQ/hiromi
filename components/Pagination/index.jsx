@@ -9,16 +9,16 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
   let items = [];
   // compute minLeft and maxRight indeces of page buttons
   // which exclude first and last pages.
-  var minLeft = currentPage - Math.floor(pagesVisible/2);
+  let minLeft = currentPage - Math.floor(pagesVisible/2);
   if (minLeft < 2) minLeft = 2;
-  var maxRight = minLeft + pagesVisible - 1;
+  let maxRight = minLeft + pagesVisible - 1;
   if (maxRight >= pageCount) {
     maxRight = pageCount - 1;
     minLeft = maxRight - pagesVisible + 1;
     if (minLeft < 2) minLeft = 2;
   }
 
-  for (var i = 1; i <= pageCount; i++) {
+  for (let i = 1; i <= pageCount; i++) {
     if (
       i !== 1 && i !== pageCount &&
       (i < minLeft || i > maxRight)
