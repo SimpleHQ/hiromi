@@ -13,7 +13,7 @@ const valueAtPath = (item, path) => {
 };
 
 const placeholder = (name, value) => {
-  if (!text) return null;
+  if (!name) return null;
   return (<Option labelPath={['name']} valuePath={['value']} item={{name, value}} />);
 };
 
