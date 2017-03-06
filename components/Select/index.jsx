@@ -12,9 +12,9 @@ const valueAtPath = (item, path) => {
   return value;
 };
 
-const placeholder = (text) => {
+const placeholder = (name, value) => {
   if (!text) return null;
-  return (<Option labelPath={['name']} item={{name: text}} />);
+  return (<Option labelPath={['name']} valuePath={['value']} item={{name, value}} />);
 };
 
 const Option = ({item, valuePath, labelPath, ...props}) => {
@@ -36,7 +36,7 @@ Option.defaultProps = {
 };
 
 const Select = ({
-  children, options, className, valuePath, labelPath, onChange, defaultValue, value, placeholderText, ...props
+  children, options, className, valuePath, labelPath, onChange, defaultValue, value, placeholderText, placeholderValue, ...props
 }) => {
   let {classList, ...finalProps} = modifierClassList(props);
   classList = classnames('select', className, classList);
@@ -44,7 +44,7 @@ const Select = ({
     <span className={classList} {...finalProps}>
       <select onChange={onChange} defaultValue={defaultValue} value={value}>
         {children}
-        {placeholder(placeholderText)}
+        {placeholder(placeholderText, placeholderValue)}
         {options.map((option, idx) => {
           return (
             <Option key={`select-option-${idx}`} item={option} valuePath={valuePath} labelPath={labelPath} />
