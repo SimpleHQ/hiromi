@@ -66,7 +66,7 @@ class ModalCard extends Component {
     return (
       <div className={classList}>
         <div className="modal-background" onClick={this.handleClose}></div>
-        <div class="modal-card-shell">
+        <div className="modal-card-shell">
           <div className="modal-card">
             {this.renderHeader}
             <section className="modal-card-body">
