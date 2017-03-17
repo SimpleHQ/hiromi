@@ -55,3 +55,14 @@ Every component has a bunch of helper properties attached to them. Note that som
 - [ ] Shared helpers - In progress
 - [x] Modal
 - [x] Modal Card
+
+### IE11 support
+Bulma has an IE11 bug: modal-card elements will not scroll correctly. We have included a small fix here but it requires the following CSS:
+```
+.modal-card-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  justify-content: center;
+}
+```
