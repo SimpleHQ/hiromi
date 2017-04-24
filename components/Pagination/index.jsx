@@ -44,7 +44,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
         <Link className={className} onClick={onPaginate(onChange, i)} >{i}</Link>
       </li>
     );
-    console.log("test")
+
     // If it's the max right visible, and there will be skipped items
     if (i === maxRight && maxRight < pageCount - 1) {
       items.push(
