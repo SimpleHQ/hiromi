@@ -29,7 +29,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     // If it's the min left visible, and there were skipped items
     if (i === minLeft && minLeft > 2) {
       items.push(
-        <li key={(i - 1).toString()}>
+        <li key="min">
           ...
         </li>
       );
@@ -48,7 +48,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     // If it's the max right visible, and there will be skipped items
     if (i === maxRight && maxRight < pageCount - 1) {
       items.push(
-        <li key={(i + 1).toString()}>
+        <li key="max">
           ...
         </li>
       );
