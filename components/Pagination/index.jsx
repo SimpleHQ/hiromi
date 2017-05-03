@@ -29,7 +29,7 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
     // If it's the min left visible, and there were skipped items
     if (i === minLeft && minLeft > 2) {
       items.push(
-        <li>
+        <li key="min">
           ...
         </li>
       );
@@ -40,15 +40,15 @@ const PageItems = ({pagesVisible, onChange, pageCount, currentPage, ...props}) =
       'is-active': active
     });
     items.push(
-      <li>
-        <Link className={className} onClick={onPaginate(onChange, i)}>{i}</Link>
+      <li key={i.toString()}>
+        <Link className={className} onClick={onPaginate(onChange, i)} >{i}</Link>
       </li>
     );
 
     // If it's the max right visible, and there will be skipped items
     if (i === maxRight && maxRight < pageCount - 1) {
       items.push(
-        <li>
+        <li key="max">
           ...
         </li>
       );
