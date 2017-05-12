@@ -1,6 +1,8 @@
 require('bulma/css/bulma.css');
 require('./docs.css');
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import ReactDOM from 'react-dom';
 import {
   Router, Route, Link as ReactRouterLink, hashHistory

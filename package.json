@@ -1,6 +1,6 @@
 {
   "name": "hiromi",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "React components for Bulma. http://bulma.io/",
   "main": "./lib",
   "scripts": {
@@ -35,9 +35,10 @@
     "bulma"
   ],
   "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.9",
     "react": "^15.0.2",
-    "react-dom": "^15.0.2",
-    "classnames": "^2.2.5"
+    "react-dom": "^15.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
