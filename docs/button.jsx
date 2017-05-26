@@ -11,6 +11,7 @@ export default React.createClass({
           background="none"
           target={Button}
           props={{
+            type: P.string("button"),
             isLink: P.bool(false),
             isOutlined: P.bool(false),
             isPrimary: P.bool(false),
