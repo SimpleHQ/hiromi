@@ -27,12 +27,14 @@ Button.propTypes = {
   isLink: PropTypes.bool,
   isInverted: PropTypes.bool,
   children: PropTypes.node,
+  type: PropTypes.string,
   ...defaultReactProps
 };
 
 Button.defaultProps = {
   isLink: false,
   isInverted: false,
+  type: "button",
   ...defaultReactPropsValues
 };
 
